@@ -1,0 +1,27 @@
+{
+  "name": "generator-eslint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint"
+  },
+  "author": "Charlie Jackson",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "yeoman-generator"
+  ],
+  "files": [
+    "app"
+  ],
+  "dependencies": {
+    "eslint": "3.15.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.9.0",
+    "winston": "2.3.1",
+    "yeoman-generator": "1.1.0"
+  }
+}

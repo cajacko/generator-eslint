@@ -1,13 +1,10 @@
-var Generator = require('yeoman-generator');
-var winston = require('winston');
+const Generator = require('yeoman-generator');
+const winston = require('winston');
+
 winston.cli();
 winston.level = 'debug';
 
 module.exports = class extends Generator {
-  constructor(args, opts) {
-    super(args, opts);
-  }
-
   copyConfig() {
     this.fs.copy(
       this.templatePath('../../../.eslintrc'),
@@ -29,18 +26,19 @@ module.exports = class extends Generator {
   }
 
   addLintScript() {
-    var packageJsonPath = this.destinationPath('package.json');
-    var packageJson;
+    const packageJsonPath = this.destinationPath('package.json');
+    let packageJson;
+    const lintScript = 'eslint **/*.js';
 
     try {
       packageJson = require(packageJsonPath);
-    } catch (e) {
+    } catch (firstError) {
       winston.log('info', 'No package.json file, creating one');
       this.spawnCommandSync('npm', ['init']);
 
       try {
         packageJson = require(packageJsonPath);
-      } catch (e) {
+      } catch (secondError) {
         winston.log('error', 'No package.json file');
         throw 'Could not create package.json file';
       }
@@ -48,14 +46,12 @@ module.exports = class extends Generator {
 
     winston.log('debug', 'packageJson', packageJson);
 
-    var lintScript = 'eslint **/*.js';
-
     if (!packageJson.scripts) {
       packageJson.scripts = {
         lint: lintScript
-      }
+      };
     } else {
-      packageJson.scripts.lint = lintScript
+      packageJson.scripts.lint = lintScript;
     }
 
     winston.log('debug', 'packageJson', packageJson);

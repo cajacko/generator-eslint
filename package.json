@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "eslint": "eslint"
   },
   "author": "Charlie Jackson",
   "license": "MIT",

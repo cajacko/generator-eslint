@@ -40,11 +40,14 @@ module.exports = class extends Generator {
 
     winston.log('debug', 'packageJson', packageJson);
 
-    if (packageJson.scripts && packageJson.scripts.lint) {
-      return false;
+    if (!packageJson.scripts || !packageJson.scripts.lint) {
+      npmAddScript({ key: 'lint', value: 'eslint **/*.js' });
     }
 
-    npmAddScript({ key: 'lint', value: 'eslint **/*.js' });
+    if (!packageJson.scripts || !packageJson.scripts.eslint) {
+      npmAddScript({ key: 'eslint', value: 'eslint' });
+    }
+
     winston.log('debug', 'packageJson', packageJson);
 
     return true;

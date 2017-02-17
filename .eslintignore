@@ -2,3 +2,4 @@
 
 build/*
 dist/*
+node_modules # Needed to stop checking nested node_modules directories

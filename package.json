@@ -17,6 +17,7 @@
     "app"
   ],
   "dependencies": {
+    "npm-add-script": "1.1.0",
     "winston": "2.3.1",
     "yeoman-generator": "1.1.0"
   },

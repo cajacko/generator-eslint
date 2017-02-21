@@ -14,7 +14,9 @@
     "yeoman-generator"
   ],
   "files": [
-    "generators"
+    "generators",
+    ".eslintrc",
+    ".eslintignore"
   ],
   "dependencies": {
     "npm-add-script": "1.1.0",

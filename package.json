@@ -1,5 +1,5 @@
 {
-  "name": "generator-eslint",
+  "name": "generator-eslint-cj",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "yeoman-generator"
   ],
   "files": [
-    "app"
+    "generators"
   ],
   "dependencies": {
     "npm-add-script": "1.1.0",

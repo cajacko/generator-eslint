@@ -24,6 +24,9 @@ module.exports = class extends Generator {
     this.npmInstall(['eslint-plugin-jsx-a11y'], { 'save-dev': true });
     this.npmInstall(['eslint-plugin-react'], { 'save-dev': true });
     this.npmInstall(['eslint-config-airbnb'], { 'save-dev': true });
+
+    // Needed for the atom eslint plugin: ask this with a prompt?
+    this.npmInstall(['babel-eslint'], { 'save-dev': true });
   }
 
   addLintScript() {

@@ -11,13 +11,26 @@
       "max-lines": [
         "error",
         {
-          "max": 100
+          "max": 100,
+          "skipBlankLines": true,
+          "skipComments": true
         }
       ],
       "max-len": [
         "error",
         {
-          "code": 80
+          "code": 80,
+          "ignoreStrings": true,
+          "ignoreUrls": true,
+          "ignoreRegExpLiterals": true
+        }
+      ],
+      "class-methods-use-this": [
+        "error",
+        {
+          "exceptMethods": [
+            "initializing" //  Needed for Yeoman generators
+          ]
         }
       ]
   }

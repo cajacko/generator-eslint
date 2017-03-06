@@ -22,7 +22,8 @@
           "code": 80,
           "ignoreStrings": true,
           "ignoreUrls": true,
-          "ignoreRegExpLiterals": true
+          "ignoreRegExpLiterals": true,
+          "ignoreTemplateLiterals": true
         }
       ],
       "class-methods-use-this": [

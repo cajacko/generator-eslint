@@ -57,7 +57,7 @@ module.exports = class extends Generator {
   }
 
   readme() {
-    this.composeWith(require.resolve('generator-readme/generators/app'), {
+    this.composeWith(require.resolve('generator-readme-cj/generators/app'), {
       tag: 'generator-eslint',
       markdown: this.fs.read(this.templatePath('README.md'))
     });

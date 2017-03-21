@@ -55,4 +55,11 @@ module.exports = class extends Generator {
 
     return true;
   }
+
+  readme() {
+    this.composeWith(require.resolve('generator-readme/generators/app'), {
+      tag: 'generator-eslint',
+      markdown: this.fs.read(this.templatePath('README.md'))
+    });
+  }
 };
